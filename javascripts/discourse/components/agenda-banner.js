@@ -19,11 +19,11 @@ export default Component.extend({
     const lastVisitDate = localStorage.getItem('banner-lastSeenAt');
 
 	// Check if last visit date is missing or more than a day ago
-	const oneDay = 60 * 1000; // 1 day in milliseconds
+	const sixHours = 6 * 60 * 60 * 1000; // 6 hours in milliseconds
 	const now = new Date().getTime();
 
 	// Show the banner on any page if longer than a day ago
-	if (!lastVisitDate || now - lastVisitDate > oneDay) {
+	if (!lastVisitDate || now - lastVisitDate > sixHours) {
 	   localStorage.setItem('banner-lastSeenAt', now);
        return true;
 	}
