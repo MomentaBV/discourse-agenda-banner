@@ -1,4 +1,4 @@
 svg_icons:
-  default: "fab-app-store-ios|fab-book-sparkles|fab-youtube"
+  default: "fa-app-store|fa-sign-in-alt|fab-app-store-ios|fa-magic|fab-youtube"
   type: "list"
   list_type: "compact"
