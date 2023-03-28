@@ -15,11 +15,20 @@ export default Component.extend({
 
   @discourseComputed("router.currentRouteName", "router.currentURL")
   discoveryRoute(currentRouteName, currentURL) {
-    let visitedBefore = localStorage.getItem("banner-presented");
-    if (!visitedBefore) {
-      localStorage.setItem("banner-presented", true);
-      return true;
-    }
+	// Get the last visit date from local storage
+    const lastVisitDate = localStorage.getItem('banner-lastSeenAt');
+
+	// Check if last visit date is missing or more than a day ago
+	const oneDay = 60 * 1000; // 1 day in milliseconds
+	const now = new Date().getTime();
+
+	// Show the banner on any page if longer than a day ago
+	if (!lastVisitDate || now - lastVisitDate > oneDay) {
+	   localStorage.setItem('banner-lastSeenAt', now);
+       return true;
+	}
+	
+	// Or on the navigation pages like "Latest"
     return currentRouteName.indexOf("discovery") > -1;
   },
 });
