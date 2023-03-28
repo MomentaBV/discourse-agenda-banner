@@ -4,6 +4,7 @@
   "license_url": null,
   "component": true,
   "assets": {
-    "note-bg": "/assets/note-bg.png"
+    "note-bg": "/assets/note-bg.png",
+	"banner-bg": "/assets/banner-bg.png"	
   }
 }
