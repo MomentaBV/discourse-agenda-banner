@@ -1,0 +1,33 @@
+{{#if (and shouldShow discoveryRoute)}}
+  <div class="custom-homepage-wrapper">
+    <div class="wrap custom-homepage">
+      <div class="welcome-wrapper">
+        <div class="welcome-content">
+          <h2>{{theme-i18n "agenda_banner.welcome"}}</h2>
+          <p>{{theme-i18n "agenda_banner.subtitle"}}</p>
+        </div>
+        <div class="featured-todo">
+          <div>
+            <a href="https://apps.apple.com/app/apple-store/id1287445660?pt=118414812&ct=agenda_community&mt=8">
+              <h3>{{d-icon "fab-app-store-ios"}}
+                {{theme-i18n "agenda_banner.download"}}</h3>
+            </a>
+          </div>
+          <div>
+            <a href="https://agenda.community/c/how-to/5">
+              <h3>{{d-icon "fab-wand-magic-sparkles"}}
+                {{theme-i18n "agenda_banner.howto"}}</h3>
+            </a>
+          </div>
+          <div>
+            <a href="https://youtube.com/c/AgendaApp">
+              <h3>
+                {{d-icon "fab-youtube"}}
+                {{theme-i18n "agenda_banner.youtube"}}</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}

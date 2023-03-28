@@ -1,4 +1,4 @@
 svg_icons:
-  default: "palette|fab-discourse"
+  default: "fab-app-store-ios|fab-wand-magic-sparkles|fab-youtube"
   type: "list"
   list_type: "compact"
