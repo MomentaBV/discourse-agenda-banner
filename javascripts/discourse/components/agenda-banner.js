@@ -13,15 +13,13 @@ export default Component.extend({
     return !isStaff && (!currentUser || lowTrustLevel);
   },
 
-  @discourseComputed("router.currentRouteName", "router.currentURL", "currentUser.first_seen_at")
-  discoveryRoute(currentRouteName, currentURL, firstSeenAt) {
-	if (firstSeenAt) {
-	    const minutesDiff = (Date.now() - firstSeenAt) / 60000;
-		if (minutesDiff <= 1) {
-			return true;
-		}
-	}
+  @discourseComputed("router.currentRouteName", "router.currentURL")
+  discoveryRoute(currentRouteName, currentURL) {
+    let visitedBefore = localStorage.getItem("banner-presented");
+    if (!visitedBefore) {
+      localStorage.setItem("banner-presented", true);
+      return true;
+    }
     return currentRouteName.indexOf("discovery") > -1;
   },
 });
-
