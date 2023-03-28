@@ -13,10 +13,10 @@ export default Component.extend({
     return !isStaff && (!currentUser || lowTrustLevel);
   },
 
-  @discourseComputed("router.currentRouteName", "router.currentURL", "currentUser.first_seen_at")
-  discoveryRoute(currentRouteName, currentURL, firstSeenAt) {
-	if (firstSeenAt) {
-	    const minutesDiff = (Date.now() - firstSeenAt) / 60000;
+  @discourseComputed("router.currentRouteName", "router.currentURL", "currentUser")
+  discoveryRoute(currentRouteName, currentURL, currentUser) {
+	if (currentUser.first_seen_at) {
+	    const minutesDiff = (Date.now() - currentUser.first_seen_at) / 60000;
 		if (minutesDiff <= 1) {
 			return true;
 		}
