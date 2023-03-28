@@ -1,4 +1,4 @@
 svg_icons:
-  default: "app-store|sign-in-alt|fab-app-store-ios|plane-departure|fab-youtube"
+  default: "app-store|user|fab-app-store-ios|plane-departure|fab-youtube"
   type: "list"
   list_type: "compact"
