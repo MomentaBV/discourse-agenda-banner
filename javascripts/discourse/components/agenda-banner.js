@@ -1,7 +1,6 @@
 import Component from "@ember/component";
 import discourseComputed from "discourse-common/utils/decorators";
 import { inject as service } from "@ember/service";
-import { getCookie } from "discourse/lib/cookies";
 
 export default Component.extend({
   router: service(),
@@ -16,6 +15,6 @@ export default Component.extend({
 
   @discourseComputed("router.currentRouteName", "router.currentURL")
   discoveryRoute(currentRouteName, currentURL) {
-    return currentRouteName.indexOf("discovery") > -1 || !getCookie("seen_notification_id");
+    return currentRouteName.indexOf("discovery") > -1;
   },
 });
