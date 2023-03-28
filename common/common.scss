@@ -27,12 +27,10 @@
     box-shadow: shadow("card");
     max-width: 930px;
     margin: 2em auto 0.5em;
-    background: url($banner_bg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: var(--secondary);
 
     .featured-todo {
+      background: var(--secondary);
       display: flex;
       justify-content: space-between;
 	  
@@ -109,6 +107,7 @@
     }
 
     .welcome-content {
+      background: var(--secondary);
       max-width: 375px;
       text-align: left;
       padding: 2.5em 2em 3em;
